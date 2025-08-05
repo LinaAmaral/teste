@@ -1,12 +1,20 @@
-import React from 'react';
-import AppRouter from "./AppRouter";
+import { Routes, Route, Link } from 'react-router-dom';
+import Home from './Home';
+import Sobre from './Sobre';
 
-
-export default function App() {
+function App() {
    return (
-    <>
-    App
-    <AppRouter/>
-    </>
+      <div>
+         <nav>
+            <Link to="/">Home</Link> | <Link to="/Sobre">Sobre</Link>
+         </nav>
+
+         <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Sobre" element={<Sobre />} />
+         </Routes>
+      </div>
    );
 }
+
+export default App;
